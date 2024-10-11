@@ -37,7 +37,7 @@ public class OrderController {
             OrderEvent event = new OrderEvent();
             event.setOrder(customerOrder);
             event.setType("ORDER_CREATED");
-                kafkaTemplate.send("new-orders", event);
+            kafkaTemplate.send("new-orders", event);
         } catch (Exception e) {
             System.out.println("Error occur in creating order");
         }
